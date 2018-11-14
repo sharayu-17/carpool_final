@@ -8,11 +8,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.model.Jdbc;
+import com.dao.Jdbc;
 import com.model.Login;
 
 public class LoginServlet  extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 102831973239L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()

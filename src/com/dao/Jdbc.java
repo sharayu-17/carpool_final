@@ -1,4 +1,4 @@
-package com.model;
+package com.dao;
 
 import java.sql.Statement;
 import java.sql.Connection;
@@ -46,7 +46,7 @@ public class Jdbc {
 			ps.setString(1,s.getUname());
 			ps.setString(2,s.getFname());
 			ps.setString(3,s.getPassword());
-			ps.setInt(4,s.getContact());
+			//			ps.setInt(4,s.getContact());
 			ps.setString(5,s.getEmail());
 
 			i=ps.executeUpdate();
@@ -96,11 +96,11 @@ public class Jdbc {
 		return new String[] {uname,password};
 	}*/
 
-	
+
 	public List<Register> getAllData()
 	{
 		List<Register> lst=new LinkedList<Register>();
-		
+
 		try
 		{
 			conn=myConnection();
@@ -114,7 +114,7 @@ public class Jdbc {
 				a.setUname(rs.getString(1));
 				a.setFname(rs.getString(2));
 				a.setPassword(rs.getString(3));
-				a.setContact(rs.getInt(4));
+				//				a.setContact(rs.getInt(4));
 				a.setEmail(rs.getString(5));
 				lst.add(a);
 				System.out.println("cnt");
@@ -167,7 +167,7 @@ public class Jdbc {
 		return i;
 	}
 
-	public int saveRide(List<OfferRide> lst) {
+	/*	public int saveRide(List<OfferRide> lst) {
 		int i=0;
 		try
 		{
@@ -202,7 +202,6 @@ public class Jdbc {
 			}
 		}
 		return i;
-
-	}
+	}*/
 
 }

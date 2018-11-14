@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.model.Jdbc;
+import com.dao.Jdbc;
 import com.model.OfferRide;
 import com.model.Register;
 
