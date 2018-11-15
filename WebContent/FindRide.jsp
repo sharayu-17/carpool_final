@@ -14,7 +14,7 @@
 <br><br><br><br>
 	<div class="row">
 		<div class="container card form_container">
-			<form class="modal-content animate" method="get" action="DisplayServlet" novalidate
+			<form class="modal-content animate" method="get" action="DisplayServlet"
 				autocomplete="off" class="idealforms searchtours">
 				<div class="form-row">
 					<h2>Find existing ride</h2>

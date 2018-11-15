@@ -11,6 +11,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import com.model.Login;
+import com.model.OfferRide;
 import com.model.Register;
 
 public class Jdbc {
@@ -46,7 +47,7 @@ public class Jdbc {
 			ps.setString(1,s.getUname());
 			ps.setString(2,s.getFname());
 			ps.setString(3,s.getPassword());
-			//			ps.setInt(4,s.getContact());
+			ps.setInt(4,s.getContact());
 			ps.setString(5,s.getEmail());
 
 			i=ps.executeUpdate();
@@ -71,32 +72,7 @@ public class Jdbc {
 		return i;
 
 	}
-	/*public String[] login()
-	{
-		String uname = null;
-		String password=null;
-
-		try {
-			conn=myConnection();
-			st=conn.createStatement();
-			rs=st.executeQuery("Select uname, password from Register");
-			while(rs.next())
-			{
-				uname=rs.getString(1);
-				password=rs.getString(2);
-			}
-
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-		System.out.println("username "+uname);
-		System.out.println("password "+password);
-		return new String[] {uname,password};
-	}*/
-
-
+	
 	public List<Register> getAllData()
 	{
 		List<Register> lst=new LinkedList<Register>();
@@ -114,7 +90,7 @@ public class Jdbc {
 				a.setUname(rs.getString(1));
 				a.setFname(rs.getString(2));
 				a.setPassword(rs.getString(3));
-				//				a.setContact(rs.getInt(4));
+				a.setContact(rs.getInt(4));
 				a.setEmail(rs.getString(5));
 				lst.add(a);
 				System.out.println("cnt");
@@ -126,6 +102,7 @@ public class Jdbc {
 		}
 		return lst;
 	}
+	
 	public boolean validateUser(Login l)
 	{
 		myConnection();
@@ -167,21 +144,24 @@ public class Jdbc {
 		return i;
 	}
 
-	/*	public int saveRide(List<OfferRide> lst) {
+	public int saveRide(List<OfferRide> lst) {
 		int i=0;
 		try
 		{
 			System.out.println("dbsave2");
 
 			conn = myConnection();		
-			ps=conn.prepareStatement("insert into Details values(?,?,?,?,?)" );	
+			ps=conn.prepareStatement("insert into Details values(?,?,?,?,?,?,?,?)" );	
 			OfferRide s=lst.get(0);
 			ps.setString(1,s.getVregno());
 			ps.setString(2,s.getUname());
 			ps.setString(3,s.getColor());
 			ps.setString(4,s.getModel());
 			ps.setString(5,s.getLicense());
-
+			ps.setString(6, s.getSource());
+			ps.setString(7, s.getDestination());
+			ps.setInt(8, s.getSeats());
+		
 			i=ps.executeUpdate();
 		}
 
@@ -202,6 +182,38 @@ public class Jdbc {
 			}
 		}
 		return i;
-	}*/
+	}
+	public List<OfferRide> getRideData()
+	{
+		List<OfferRide> lst=new LinkedList<OfferRide>();
+
+		try
+		{
+			conn=myConnection();
+			Statement s=
+					conn.createStatement
+					(ResultSet.TYPE_SCROLL_SENSITIVE,ResultSet.CONCUR_READ_ONLY);
+			rs=s.executeQuery("select * from Details");
+			while(rs.next())
+			{
+				OfferRide a=new OfferRide();
+				a.setVregno(rs.getString(1));
+				a.setUname(rs.getString(2));
+				a.setColor(rs.getString(3));
+				a.setModel(rs.getString(4));
+				a.setLicense(rs.getString(5));
+				a.setSource(rs.getString(6));
+				a.setDestination(rs.getString(7));
+				a.setSeats(rs.getInt(8));
+				lst.add(a);
+				System.out.println("added");
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+		}
+		return lst;
+	}
 
 }

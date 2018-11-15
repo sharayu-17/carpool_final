@@ -13,28 +13,34 @@
 <title>Display</title>
 </head>
 <body>
-	<h3>List of Members</h3>
-	<c:if test="${requestScope.message !=null}">
+	<h3>Ride details</h3>
+	<%-- <c:if test="${requestScope.message !=null}">
 	NOTE : ${message}
-</c:if>
+</c:if> --%>
 	<c:if
-		test="${requestScope.memberList !=null and
- not empty requestScope.memberList}">
+		test="${requestScope.rideList !=null and
+ not empty requestScope.rideList}">
 		<table border="2" cellpadding="2">
 			<tr>
+				<td>Vehicle Registration Number</td>
 				<td>Username</td>
-				<td>First Name</td>
-				<td>Password</td>
-				<td>Contact</td>
-				<td>Email</td>
+				<td>Color</td>
+				<td>Model</td>
+				<td>License</td>
+				<td>Source</td>
+				<td>Destination</td>
+				<td>Number of seats</td>
 			</tr>
-			<c:forEach items="${requestScope.memberList}" var="e">
+			<c:forEach items="${requestScope.rideList}" var="e">
 				<tr>
+					<td>${e.vregno}</td>
 					<td>${e.uname}</td>
-					<td>${e.fname}</td>
-					<td>${e.password}</td>
-					<td>${e.contact}</td>
-					<td>${e.email}</td>
+					<td>${e.color}</td>
+					<td>${e.model}</td>
+					<td>${e.license}</td>
+					<td>${e.source}</td>
+					<td>${e.destination}</td>
+					<td>${e.seats}</td>
 				</tr>
 			</c:forEach>
 		</table>

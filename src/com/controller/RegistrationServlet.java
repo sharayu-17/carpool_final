@@ -39,17 +39,17 @@ public class RegistrationServlet extends HttpServlet {
 		String s1=request.getParameter("uname");
 		String s2=request.getParameter("fname");
 		String s3=request.getParameter("password");
-//		String s4=request.getParameter("contact");
+		String s4=request.getParameter("contact");
 		String s5=request.getParameter("email");
 		System.out.println(s2);
-//		int contact=Integer.parseInt(s4);
+		int contact=Integer.parseInt(s4);
 
 		Register r=new Register();
 		
 		r.setUname(s1);;
 		r.setFname(s2);
 		r.setPassword(s3);
-//		r.setContact(contact);
+		r.setContact(contact);
 		r.setEmail(s5);
 			
 		Jdbc jd=new Jdbc();

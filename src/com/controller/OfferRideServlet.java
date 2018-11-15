@@ -41,7 +41,7 @@ public class OfferRideServlet extends HttpServlet {
 		
 		System.out.println(s2);
 		
-		int seats=Integer.parseInt(s8);
+		int a=Integer.parseInt(s8);
 
 		OfferRide r=new OfferRide();
 		
@@ -52,20 +52,21 @@ public class OfferRideServlet extends HttpServlet {
 		r.setLicense(s5);
 		r.setSource(s6);
 		r.setDestination(s7);
-		r.setSeats(seats);
+		r.setSeats(a);
 			
 		Jdbc jd=new Jdbc();
 		List<OfferRide> lst=new LinkedList<OfferRide>();
 		lst.add(r);
 		System.out.println("test1");
-		int i=jd.saveRide(lst);
-		System.out.println("test2 value is "+i);
-		if(i>0)
-		{
-			System.out.println("test3");
-			response.sendRedirect("Ride.jsp");
-		}
-		System.out.println("test4");
+		response.sendRedirect("RideDisplay");
+//		int i=jd.saveRide(lst);
+//		System.out.println("test2 value is "+i);
+//		if(i>0)
+//		{
+//			System.out.println("test3");
+//			response.sendRedirect("Ride.jsp");
+//		}
+//		System.out.println("test4");
 		
 		
 	}

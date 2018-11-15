@@ -15,7 +15,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="container card form_container">
-					<form method="get" id="register" class="signup-form"
+					<form method="get" id="offerRide" class="signup-form"
 						action="OfferRideServlet">
 						<div class="col-sm-12 col-md-12 col-xs-12">
 
@@ -26,7 +26,7 @@
 								</div>
 							</div>
 						</div>
-						<form>
+						
 							<div class="form-group col-md-6">
 								<label class="hide">Username</label> <input type="text"
 									data-bind="value: uname" name="uname"
@@ -113,6 +113,7 @@
 							<div class="form-group">
 								<button type="submit" data-bind="click:Save" class="btn">Submit</button>
 							</div>
+							</form>
 				</div>
 			</div>
 		</div>

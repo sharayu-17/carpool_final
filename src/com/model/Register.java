@@ -4,7 +4,7 @@ public class Register {
 	private String uname;
 	private String fname;
 	private String password;
-//	private int contact;
+	private int contact;
 	private String email;
 	
 	public String getUname() {
@@ -25,12 +25,12 @@ public class Register {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-//	public int getContact() {
-//		return contact;
-//	}
-//	public void setContact(int contact) {
-//		this.contact = contact;
-//	}
+	public int getContact() {
+		return contact;
+	}
+	public void setContact(int contact) {
+		this.contact = contact;
+	}
 	public String getEmail() {
 		return email;
 	}

@@ -31,6 +31,16 @@
   </servlet-mapping>
   <servlet>
     <description></description>
+    <display-name>DisplayServlet</display-name>
+    <servlet-name>DisplayServlet</servlet-name>
+    <servlet-class>com.controller.DisplayServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DisplayServlet</servlet-name>
+    <url-pattern>/DisplayServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
     <display-name>OfferRideServlet</display-name>
     <servlet-name>OfferRideServlet</servlet-name>
     <servlet-class>com.controller.OfferRideServlet</servlet-class>

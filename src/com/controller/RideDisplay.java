@@ -10,18 +10,19 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.dao.Jdbc;
+import com.model.OfferRide;
 import com.model.Register;
 
-public class DisplayServlet extends HttpServlet {
+public class RideDisplay extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	public DisplayServlet() {
+	public RideDisplay() {
 		super();
 	}
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		System.out.println("displayserv1");
 		Jdbc db=new Jdbc();
-		List<Register> lst=db.getAllData();
+		List<OfferRide> lst=db.getRideData();
 		System.out.println("displayserv2");
 		
 
@@ -30,8 +31,8 @@ public class DisplayServlet extends HttpServlet {
 		response.sendRedirect("DisplayAll.jsp");
 		 */
 
-		request.setAttribute("memberList",lst);
-		RequestDispatcher view = request.getRequestDispatcher("List.jsp");
+		request.setAttribute("rideList",lst);
+		RequestDispatcher view = request.getRequestDispatcher("Display.jsp");
 		view.forward(request, response);	
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
