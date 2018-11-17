@@ -10,7 +10,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Display</title>
+<title>Ride</title>
 </head>
 <body>
 	<h3>Ride details</h3>

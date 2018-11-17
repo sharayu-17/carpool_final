@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -21,7 +22,6 @@ public class OfferRideServlet extends HttpServlet {
      */
     public OfferRideServlet() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	/**
@@ -58,15 +58,16 @@ public class OfferRideServlet extends HttpServlet {
 		List<OfferRide> lst=new LinkedList<OfferRide>();
 		lst.add(r);
 		System.out.println("test1");
-		response.sendRedirect("RideDisplay");
-//		int i=jd.saveRide(lst);
-//		System.out.println("test2 value is "+i);
-//		if(i>0)
-//		{
-//			System.out.println("test3");
-//			response.sendRedirect("Ride.jsp");
-//		}
-//		System.out.println("test4");
+		
+		int i=jd.saveRide(lst);
+		System.out.println("test2 value is "+i);
+		if(i>0)
+		{
+			System.out.println("test3");
+			RequestDispatcher view = request.getRequestDispatcher("/RideDisplay");
+			view.forward(request, response);
+		}
+		System.out.println("test4");
 		
 		
 	}

@@ -39,6 +39,16 @@
     <servlet-name>DisplayServlet</servlet-name>
     <url-pattern>/DisplayServlet</url-pattern>
   </servlet-mapping>
+   <servlet>
+    <description></description>
+    <display-name>RideDisplay</display-name>
+    <servlet-name>RideDisplay</servlet-name>
+    <servlet-class>com.controller.RideDisplay</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RideDisplay</servlet-name>
+    <url-pattern>/RideDisplay</url-pattern>
+  </servlet-mapping>
   <servlet>
     <description></description>
     <display-name>OfferRideServlet</display-name>
